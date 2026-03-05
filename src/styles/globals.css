@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 全局样式重置 */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* 自定义组件样式 */
+@layer components {
+  .section-container {
+    @apply min-h-screen w-full max-w-full flex flex-col justify-center items-center;
+  }
+  
+  .contact-card {
+    @apply bg-primary-dark rounded-2xl p-8 shadow-xl 
+           border border-primary-light/20 hover:border-accent-primary/40
+           transition-all duration-300 hover:shadow-2xl;
+  }
+  
+  .skill-bar {
+    @apply w-full bg-primary-light rounded-full h-3 overflow-hidden;
+  }
+  
+  .skill-progress {
+    @apply h-full bg-gradient-to-r from-accent-primary to-accent-green 
+           rounded-full transition-all duration-1000 ease-out;
+  }
+}
+
+/* 自定义动画 */
+@layer utilities {
+  .animate-typing {
+    animation: typing 2s steps(40, end);
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+}
